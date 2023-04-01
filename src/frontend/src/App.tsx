@@ -103,6 +103,19 @@ export default function App() {
 	return (
 		//need parent component with width and height
 		<div className="h-full flex flex-col">
+			{/* a navbar */}
+			<nav className="bg-black text-white flex items-center justify-between px-4 py-2">
+				{/* svg logo.svg */}
+				<div className="flex items-center">
+					<span className="ml-2 font-bold">Bittensor</span>
+				</div>
+				<a href="/miners" className="flex items-end">
+					Miners
+				</a>
+				<a href="/editor" className="flex items-end">
+					editor
+				</a>
+			</nav>	
 			<div className="flex grow-0 shrink basis-auto"></div>
 			<ErrorBoundary
 				onReset={() => {
@@ -155,13 +168,6 @@ export default function App() {
 					</div>
 				))}
 			</div>
-			<a
-				target={"_blank"}
-				href="https://logspace.ai/"
-				className="absolute bottom-1 left-1 text-gray-500 text-xs cursor-pointer font-sans tracking-wide"
-			>
-				Created by Logspace
-			</a>
 		</div>
 	);
 }

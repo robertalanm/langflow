@@ -63,6 +63,7 @@ def build_template_from_function(name: str, type_to_loader_dict: Dict):
 def build_template_from_class(name: str, type_to_cls_dict: Dict):
     classes = [item.__name__ for item in type_to_cls_dict.values()]
 
+    print(classes)
     # Raise error if name is not in chains
     if name not in classes:
         raise ValueError(f"{name} not found.")
@@ -251,6 +252,7 @@ def format_dict(d, name: Optional[str] = None):
 
     # Process remaining keys
     for key, value in d.items():
+        # print(key, value)
         if key == "_type":
             continue
 
@@ -285,13 +287,15 @@ def format_dict(d, name: Optional[str] = None):
                 "examples",
                 "temperature",
                 "model_name",
+                "wallet_name",
+                "hotkey_name"
             ]
             or "api_key" in key
         )
 
         # Add password field
         value["password"] = any(
-            text in key for text in ["password", "token", "api", "key"]
+            text in key for text in ["password", "token", "api"] if text != "hotkey_name"
         )
 
         # Add multline

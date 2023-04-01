@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     prompts: Optional[List[str]] = Field(...)
     llms: Optional[List[str]] = Field(...)
     tools: Optional[List[str]] = Field(...)
+    vectorstores: Optional[List[str]] = Field(...)
     memories: Optional[List[str]] = Field(...)
     dev: bool = Field(...)
 

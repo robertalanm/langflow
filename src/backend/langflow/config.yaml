@@ -1,11 +1,13 @@
 chains:
   - LLMChain
   - LLMMathChain
+  - LLMBashChain
   - LLMChecker
-  # - ConversationChain
+  - ConversationChain
 
 agents:
   - ZeroShotAgent
+  - ConversationalChatAgent
 
 prompts:
   - PromptTemplate
@@ -14,6 +16,11 @@ prompts:
 llms:
   - OpenAI
   - OpenAIChat
+  - Cohere
+  - BittensorLLM
+
+vectorstores:
+  # - Chroma
 
 tools:
   - Search
@@ -22,6 +29,6 @@ tools:
   - Serper Search
 
 memories:
-  # - ConversationBufferMemory
+  - ConversationBufferMemory
 
-dev: false
+dev: true

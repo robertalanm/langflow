@@ -5,6 +5,7 @@ from langflow.custom import customs
 from langflow.interface.custom_lists import (
     llm_type_to_cls_dict,
     memory_type_to_cls_dict,
+    vectorstore_type_to_cls_dict
 )
 from langflow.settings import settings
 from langflow.utils import util
@@ -19,6 +20,7 @@ def list_type(object_type: str):
         "llms": list_llms,
         "memories": list_memories,
         "tools": list_tools,
+        "vectorstores": list_vectorstores,
     }.get(object_type, lambda: "Invalid type")()
 
 
@@ -79,4 +81,12 @@ def list_memories():
         memory.__name__
         for memory in memory_type_to_cls_dict.values()
         if memory.__name__ in settings.memories or settings.dev
+    ]
+
+def list_vectorstores():
+    """List all vectorstore types"""
+    return [
+        vectorstore.__name__
+        for vectorstore in vectorstore_type_to_cls_dict.values()
+        if vectorstore.__name__ in settings.vectorstores or settings.dev
     ]

@@ -17,6 +17,8 @@ def read_items():
         "agents",
         "prompts",
         "llms",
+        "memories",
+        "vectorstores",
         "tools",
     ]
 
@@ -51,6 +53,10 @@ def list_memories():
     """List all memory types"""
     return list_type("memories")
 
+@router.get("/vectorstores")
+def list_vectorstores():
+    """List all vectorstore types"""
+    return list_type("vectorstores")
 
 @router.get("/tools")
 def list_tools():

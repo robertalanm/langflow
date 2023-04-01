@@ -56,5 +56,9 @@
             "last 1 safari version"
         ]
     },
+<<<<<<< HEAD
     "proxy": "http://backend:7860"
+=======
+    "proxy": "http://127.0.0.1:8000"
+>>>>>>> 4775dd1 (updates bt)
 }

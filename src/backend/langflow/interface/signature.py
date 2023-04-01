@@ -13,6 +13,7 @@ from langflow.custom import customs
 from langflow.interface.custom_lists import (
     llm_type_to_cls_dict,
     memory_type_to_cls_dict,
+    vectorstore_type_to_cls_dict
 )
 from langflow.utils import util
 
@@ -25,6 +26,7 @@ def get_signature(name: str, object_type: str):
         "prompts": get_prompt_signature,
         "llms": get_llm_signature,
         "memories": get_memory_signature,
+        "vectorstores": get_vectorstore_signature,
         "tools": get_tool_signature,
     }.get(object_type, lambda name: f"Invalid type: {name}")(name)
 
@@ -74,6 +76,13 @@ def get_memory_signature(name: str):
     except ValueError as exc:
         raise ValueError("Memory not found") from exc
 
+def get_vectorstore_signature(name: str):
+    """Get the signature of a vectorstore."""
+    try:
+        print(name)
+        return util.build_template_from_class(name, vectorstore_type_to_cls_dict)
+    except ValueError as exc:
+        raise ValueError("Vectorstore not found") from exc
 
 def get_tool_signature(name: str):
     """Get the signature of a tool."""

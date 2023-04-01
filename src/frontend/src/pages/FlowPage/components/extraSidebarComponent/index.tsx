@@ -30,6 +30,10 @@ export default function ExtraSidebar() {
             Object.keys(result.data[curr]).forEach((c:keyof APIKindType) => {
               acc[c] = curr;
               // Add the base classes to the accumulator as well.
+<<<<<<< HEAD
+=======
+              console.log(acc, curr)
+>>>>>>> 4775dd1 (updates bt)
               result.data[curr][c].base_classes?.forEach((b) => {
                 acc[b] = curr;
               });

@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #333;
+    height: 60px;
+  }
+  
+  .navbar__left,
+  .navbar__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__item {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .navbar__item:last-child {
+    margin-right: 0;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+  }

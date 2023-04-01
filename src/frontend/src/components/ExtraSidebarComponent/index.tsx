@@ -118,6 +118,23 @@ export default function ExtraSidebar() {
             )}
           </div>
         </div>
+        {/* button at the bottom of the page */}
+        <div
+          className={`${
+            isStackedOpen ? "w-52" : "w-0 "
+          } flex-shrink-0 flex items-center justify-center h-12 border-t dark:border-gray-700`}
+        >
+          <button
+            className="w-full h-full flex items-center justify-center"
+            
+          >
+            {/* text */}
+            <span className={`${
+                isStackedOpen ? "w-2/3" : "w-0 "
+              } h-8 rounded-sm text-gray-300 hover:text-gray-100 bg-black hover:bg-gray-800 transition-all duration-500`}>compile</span>
+          </button>
+        </div>
+
       </aside>
     </>
   );

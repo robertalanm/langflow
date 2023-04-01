@@ -29,8 +29,10 @@ def build_langchain_types_dict():
         },
         "llms": {llm: get_signature(llm, "llms") for llm in list_type("llms")},
         "memories": {
-            memory: get_signature(memory, "memories")
-            for memory in list_type("memories")
+            memory: get_signature(memory, "memories") for memory in list_type("memories")
+        },
+        "vectorstores": {
+            vectorstore: get_signature(vectorstore, "vectorstores") for vectorstore in list_type("vectorstores")
         },
         "tools": {tool: get_signature(tool, "tools") for tool in list_type("tools")},
     }
